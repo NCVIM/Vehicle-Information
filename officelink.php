@@ -10,7 +10,7 @@
 
 
 
-  <link rel="stylesheet" href="assets/css/ma.css" /> 
+  <!-- <link rel="stylesheet" href="assets/css/mainn.css" />  -->
 
 </head>
 
@@ -29,7 +29,7 @@
 
     <div class="inner">
 
-      <a href="index.php" class="logo">Aqua Loom</a>
+      <a href="index.php" class="logo">water hole</a>
 
 
       <nav id="nav">
@@ -91,7 +91,7 @@
         </td>
 
         <td><label for="District">Select District: </label></td>
-        <?php
+        <?php 
 
         $m="select * from district";
         $result=mysqli_query($conn,$m);
@@ -121,85 +121,77 @@
 
        <td><label for="taluk">Select Taluk : </label></td>
        <td><select name="taluk" id="taluk">
-         <option value="">Select District first</option></td>
+         <option value="">Select District first</option>
+
+       </select>
+     </td>
+
+   </tr>
+
+   <!-- Selecting SE --> 
+   <tr>
+    <td><label for="se">Select SE : </label></td>
+    <td><select name="se" id="se" style=" height: 50px; width: 150px;">
+     <option value="">Select CE first</option>
+   </select>
+ </td>
+
+ <td><label for="panchayat">Select Panchayat : </label></td>
+ <td>
+  <div id="checkboxes">
+   <input type="checkbox" name="check" ><br>
+ </div></td>
 
 
-       </tr>
 
-       <!-- Selecting SE --> 
-       <tr>
-        <td><label for="se">Select SE : </label></td>
-        <td><select name="se" id="se" style=" height: 50px; width: 150px;">
-         <option value="">Select CE first</option></td>
+</tr>
 
-         <td><label for="panchayat">Select Panchayat : </label></td>
-         <td>
-          <!--<div id="checkboxes">
-           <input type="checkbox" name="check" ><br>
-         </div></td>  
-         <input type="text" placeholder="SELECT PANCHAYATH" name="us" required>  </td><td>-->   <div class="multiselect">
-    <div class="selectBox" onclick="showCheckboxes()">
-      <select>
-        <option>Select Panchayath</option>
-		
-      </select>
-      <div class="overSelect"></div>
-    </div>
-    <!--<div id="checkboxes">-->
-    <div id="checkboxes">
-           <input type="checkbox" name="check" ><br>
-         
-      <!--<label for="one">
-        <input type="checkbox" id="one" />First checkbox</label>
-      <label for="two">
-        <input type="checkbox" id="two" />Second checkbox</label>
-      <label for="three">
-        <input type="checkbox" id="three" />Third checkbox</label>-->
-    </div>
-  </div> </td></tr>
-         
+<!-- Selecting EE --> 
+<tr>
+  <td><label for="ee">Select EE : </label></td>
+  <td><select name="ee" id="ee" style=" height: 50px; width: 150px;">
+   <option value="">Select SE first</option>
+ </select>
+</td>
 
-       </tr>
+</tr>
 
-       <!-- Selecting EE --> 
-       <tr>
-        <td><label for="ee">Select EE : </label></td>
-        <td><select name="ee" id="ee" style=" height: 50px; width: 150px;">
-         <option value="">Select SE first</option></td>
+<!-- Selecting AXE --> 
+<tr>
+  <td><label for="axe">Select AXE : </label></td>
+  <td><select name="axe" id="axe" style=" height: 50px; width: 150px;">
+   <option value="">Select EE first</option>
+ </select>
+</td>
 
-       </tr>
-
-       <!-- Selecting AXE --> 
-       <tr>
-        <td><label for="axe">Select AXE : </label></td>
-        <td><select name="axe" id="axe" style=" height: 50px; width: 150px;">
-         <option value="">Select EE first</option></td>
-
-       </tr>
+</tr>
 
 
-       <!-- Selecting AE --> 
-       <tr>
-        <td><label for="ae">Select AE : </label></td>
-        <td><select name="ae" id="ae" style=" height: 50px; width: 150px;">
-         <option value="">Select AXE first</option></td>
-         <td><input type="submit" value="ADD" name="submit" class="alt" /></td>
+<!-- Selecting AE --> 
+<tr>
+  <td><label for="ae">Select AE : </label></td>
+  <td><select name="ae" id="ae" style=" height: 50px; width: 150px;">
+   <option value="">Select AXE first</option>
+ </select>
+</td>
+<td><input type="submit" value="ADD" name="submit" class="alt" /></td>
 
-       </tr>
+</tr>
 
 
 
 
 
 
-     </table>    
+</table>    
+</form>
 
 
 
 
 
 
-     <!-- Scripts -->
+<!-- Scripts -->
 			<!-- <script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
@@ -362,17 +354,18 @@
           $('#add').submit(function(event) {
 
            event.preventDefault();
-           $check = $('#check').val();
-           if($ae == null) {
-            alert(" select Taluk first !");
-            return;
-          }
-          $check = $('#check').val();
-          $check = $check.trim();
-          if( $ae.length < 1) {
-            alert(" Select a valid Panchayat");
-            return;
-          }
+          //  $check = $('#check').val();
+          //  console.log($check);
+          //  if($check == null) {
+          //   alert(" select Taluk first !");
+          //   return;
+          // }
+          // $check = $('#check').val();
+          // $check = $check.trim();
+          // if( $ae.length < 1) {
+          //   alert(" Select a valid Panchayat");
+          //   return;
+          // }
           
           $.ajax({
             type:'POST',
@@ -414,24 +407,6 @@
 
 
         });
-        {
-
-var expanded = false;
-
-function showCheckboxes() {
-
-  var checkboxes = document.getElementById("checkboxes");
-  if (!expanded) {
-    checkboxes.style.display = "block";
-    expanded = true;
-  } else {
-    checkboxes.style.display = "none";
-    expanded = false;
-  }
-}
-
-
-}
       </script>
 
 
