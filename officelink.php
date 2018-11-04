@@ -170,11 +170,12 @@
 <!-- Selecting AE --> 
 <tr>
   <td><label for="ae">Select AE : </label></td>
-  <td><select name="ae" id="ae" style=" height: 50px; width: 150px;">
-   <option value="">Select AXE first</option>
- </select>
-</td>
-<td><input type="submit" value="ADD" name="submit" class="alt" /></td>
+  <td>
+    <select name="ae" id="ae" style=" height: 50px; width: 150px;">
+     <option value="">Select AXE first</option>
+   </select>
+ </td>
+ <td><input type="submit" value="ADD" name="submit" class="alt" /></td>
 
 </tr>
 
