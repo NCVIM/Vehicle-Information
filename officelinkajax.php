@@ -34,7 +34,7 @@ if(isset($_POST['check'])) {
    } else {
      echo "0";
    }
-   $conn->close();
+   // $conn->close();
 
  }
 }
@@ -213,7 +213,7 @@ else  if(isset($_POST["Taluk_ID"]) && !empty($_POST["Taluk_ID"])){
   // echo '<input type="checkbox" name="panchayat" value="0" style="display: none;" />  <br>'; 
 
   while($row = $query->fetch_assoc()){ 
-    echo '<input type="checkbox" name="panchayat[]" value="'.$row['Panchayt_Id'].'" required /> '.$row['Panchayt_Name'].' <br>'; 
+    echo '<input type="checkbox" class="panchayat" name="panchayat[]" value="'.$row['Panchayt_Id'].'"  /> '.$row['Panchayt_Name'].' <br>'; 
   }
 }else{
  echo '<div  >Panchayat not available</div>';
@@ -224,12 +224,39 @@ else  if(isset($_POST["Taluk_ID"]) && !empty($_POST["Taluk_ID"])){
 
 if (isset( $_POST['panchayat'])) {
 
+
+ //  $ae = 0;
+
+ //  $sqll="select AE_Id from ae WHERE Taluk_Name = ".$_POST['ae']."  ";
+ //  $queryy =mysqli_query($conn,$sql);
+ //  foreach($check as $val)   {
+ //   $ae = $check['AE_Id'];
+ // }
+
+  $results = 1;
+  $ae = $_POST['ae'];
+
   if (is_array($_POST['panchayat'])) {
 
     foreach ($_POST['panchayat'] as $key => $value) {
-      echo " INSERT INTO something values Someting $value ;";
+
+
+      $sql = " UPDATE panchayat SET AE_Id = $ae WHERE Panchayt_Id = $value  ;";
+
+
+      if (mysqli_query($conn, $sql)) {
+
+      } else {
+
+        $results = 0;
+      }
+
+
+
     }
   # code...
+
+    echo   $results;
   } 
 
 
