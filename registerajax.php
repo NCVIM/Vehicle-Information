@@ -2,8 +2,6 @@
 
 
 include_once 'connection.php'; 
-
-
 if(isset($_POST['panchayat'])) {
    
 
@@ -29,6 +27,22 @@ if(isset($_POST['panchayat'])) {
      } else {
          echo "0";
      }
+     $conn->close();
+
+
+ }
+
+
+
+if(isset($_POST['mobile'])) {
+   $m="select AE_Id from panchayat where Panchayat_Id='".$_POST["panchayat"]."'";
+   $query =mysqli_query($conn,$m);
+
+
+$sql="insert into complaint(district,taluk,panchaayath,AE_Id,type,Others,Description,Landmark,name,Mobile_Number)
+values('".$_POST["district"]."','".$_POST["taluk"]."','".$_POST["panchayat"]."','$m','".$_POST["category"]."',
+'".$_POST["others"]."','".$_POST["description"]."','".$_POST["landmark"]."','".$_POST["name"]."',
+'".$_POST["mobile"]."')";
      $conn->close();
 
 
