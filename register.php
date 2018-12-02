@@ -127,12 +127,12 @@
        <tr>
          <td><label for="Landmark ">Landmark:</label></td>
          <td><input type="text" style=" height: 50px; width: 150px;" name="landmark" id="landmark" /></td>
-        </tr>
-        <tr>
+       </tr>
+       <tr>
          <td><label for="Name ">Name:</label></td>
          <td><input type="text" style=" height: 50px; width: 150px;" name="name" id="name" /></td>
-        </tr>
-        
+       </tr>
+       
 
        
 
@@ -140,7 +140,7 @@
          <td><label for="MOBILE NUMBER ">MOBILE NO:</label></td>
          <td><input type="text" style=" height: 50px; width: 150px;" name="Mobile_No" id="mobile" /></td>
 
-         <td><input type="submit" value="REGISTER" name="submit" id="submt"class="alt" /></td>
+         <td><input type="submit" value="REGISTER" name="submit-comp" id="submt"class="alt" /></td>
 
        </tr>
 
@@ -202,63 +202,63 @@
          }
        });
 
-       $('#addcomp').submit(function(event) 
-       {
+          $('#addcomp').submit(function(event) 
+          {
 
-        event.preventDefault();
-        $category = $('#category').val();
+            event.preventDefault();
+            $category = $('#category').val();
 
-        $mobile = $('#mobile').val();
-          $mobile = $mobile.trim();
-          if( $mobile.length < 1) {
-            alert(" enter a valid number");
-            return;
-          }
-          
-
-
-console.log("hello");
-$.ajax({
- type:'POST',
- url:'registerajax.php',
- data: $(this).serialize(),
- success:function(response){
-   console.log(response);
-   switch(parseInt(response.trim())) {
-     case 1: 
-     {
-     alert("data inserted successfully");
-     $('#district').val('');
-     $('#taluk').val('');
-     $('#panchayat').val('');
-     $('#category').val('');
-     $('#others').val('');
-     $('#landmark').val('');
-     $('#description').val('');
-     $('#name').val('');
-     $('#mobile').val('');
-     break;
-     }
-     case 2:
-     alert("Duplicate entry");
-
-     break;
-
-     default:
-     alert(" Errror from server");
-   }
-
- }
-}); 
+            $mobile = $('#mobile').val();
+            $mobile = $mobile.trim();
+            if( $mobile.length < 1) {
+              alert(" enter a valid number");
+              return;
+            }
+            
 
 
+            console.log("hello");
+            $.ajax({
+             type:'POST',
+             url:'registerajax.php',
+             data: $(this).serialize(),
+             success:function(response){
+               console.log(response);
+               switch(parseInt(response.trim())) {
+                 case 1: 
+                 {
+                   alert("data inserted successfully");
+                   $('#district').val('');
+                   $('#taluk').val('');
+                   $('#panchayat').val('');
+                   $('#category').val('');
+                   $('#others').val('');
+                   $('#landmark').val('');
+                   $('#description').val('');
+                   $('#name').val('');
+                   $('#mobile').val('');
+                   break;
+                 }
+                 case 2:
+                 alert("Duplicate entry");
+
+                 break;
+
+                 default:
+                 alert(" Errror from server");
+               }
+
+             }
+           }); 
 
 
-});
 
 
-});
-</script>
+          });
+
+
+        });
+      </script>
       
 
 
