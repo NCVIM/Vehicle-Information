@@ -147,12 +147,12 @@ $id=2;
 
                     </form>
                    
-                        <form class="login100-form validate-form" action="pending.php">
+                        <form class="login100-form validate-form" action="pendingview.php">
 						
                     
                         <td> <input type="image" src="images/violet.png" alt="Submit" width="100" height="100" >
                         </td></form>  
-                        <form class="login100-form validate-form" action="complete.php">
+                        <form class="login100-form validate-form" action="completeview.php">
                             <input type="hidden" name="varname" value=<?php echo $Name?>>
 
                         <td> <input type="image" src="images/green1.jpg" alt="Submit" width="100" height="100">
