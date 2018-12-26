@@ -116,8 +116,8 @@
         <option value="OTHERS">OTHERS</option></select></td>
 
 
-        <td><label for="Others ">OTHERS:</label></td>
-        <td><input type="text"  style=" height: 50px; width: 150px; " name="Others" id="others" selected disabled /></td>
+        <td  class="showothers"><label for="Others ">OTHERS:</label></td>
+        <td class="showothers"><input type="text"  style=" height: 50px; width: 150px; " name="Others" id="others" selected disabled /></td>
 
 
         <tr>
@@ -163,10 +163,18 @@
 
       <script type="text/javascript">
         $(document).ready(function(){
+
+          $('.showothers').hide();
+
           $(document).on('change', '#category', function(){ 
             var districtID = $(this).val();
+            
+            $('.showothers').hide();
             $('#others').prop('disabled', true);
             if($(this).val() == 'OTHERS'){
+
+              $('.showothers').show();
+
               $('#others').prop('disabled', false);
             }
           });
