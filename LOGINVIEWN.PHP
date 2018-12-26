@@ -67,41 +67,34 @@ session_start();
       <!-- Adding Image Buttons -->
       <tr> 
 
-        <form class="login100-form validate-form" action="unread.php" method="GET">
 
-          <input type="hidden" name="varname" value="<?php echo $_SESSION['name'];?>">
+        <form class="login100-form validate-form" action="prvread.php">
+         <input type="hidden" name="varname" value="<?php echo $_SESSION['name'];?>">
 
+         <td> <input type="image" src="images/blue1.jpg" alt="Submit" width="100" height="100" ></td>
 
-          <td><input type="image" src="images/unread1.jpg" alt="Submit" name="Submit" width="100" height="100">
-          </td> </form>
-
-          <form class="login100-form validate-form" action="read.php">
-           <input type="hidden" name="varname" value="<?php echo $_SESSION['name'];?>">
-
-           <td> <input type="image" src="images/blue1.jpg" alt="Submit" width="100" height="100" ></td>
-
-         </td>
+       </td>
 
 
-       </form>
+     </form>
 
-       <form class="login100-form validate-form" action="pendingview.php">
-
-
-        <td> <input type="image" src="images/violet1.png" alt="Submit" width="100" height="100" >
-        </td></form>  
-        <form class="login100-form validate-form" action="completeview.php">
-          <input type="hidden" name="varname" value="<?php echo $_SESSION['name'];?>">
-
-          <td> <input type="image" src="images/green1.jpg" alt="Submit" width="100" height="100">
-            <!---<input type="text" name="regName" value="">  -->
-          </td></form>     
-        </tr>
+     <form class="login100-form validate-form" action="pendingview.php">
 
 
-      </div>
+      <td> <input type="image" src="images/violet1.png" alt="Submit" width="100" height="100" >
+      </td></form>  
+      <form class="login100-form validate-form" action="completeview.php">
+        <input type="hidden" name="varname" value="<?php echo $_SESSION['name'];?>">
+
+        <td> <input type="image" src="images/green1.jpg" alt="Submit" width="100" height="100">
+          <!---<input type="text" name="regName" value="">  -->
+        </td></form>     
+      </tr>
+
+
     </div>
   </div>
+</div>
 
 </section>
 

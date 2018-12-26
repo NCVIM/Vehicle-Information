@@ -96,7 +96,7 @@ session_start();
 								<td> <?php echo $row['name']; ?></td>
 								<td><?php echo $row['Mobile_Number']; ?> </td>
 								<td> 
-									<a href="readview.php?id=<?php echo $row['C_Id']; ?>">view</a> 
+									<a href="nreadview.php?id=<?php echo $row['C_Id']; ?>">view</a> 
 								</td>
 							</tr>
 
