@@ -160,22 +160,14 @@ if (isset($_GET['id'])) {
             </tr>                
 
             <tr>
-                <td><input type="button" value="Rectified" name="rect" class="alt"  onclick="location.href='rectified.php?id=<?php echo $row['C_Id']; ?>';"    /></td>
+
+                <td> <input readonly type="button" onclick="location.href='nview.php';" value="Back" name="back" class="alt" /></td>
+            </tr>
 
 
-                <td><input readonly type="button" value="Transfer" name="submit" class="alt"  onclick="location.href='transfer.php?id=<?php echo $row['C_Id']; ?>';"    /></td>
-
-                <td><input readonly type="button" value="Pending" name="submit1" class="alt"   onclick="location.href='pending.php?id=<?php echo $row['C_Id']; ?>';"   /></td>
-
-                <td>
-
-                    <input readonly type="button" onclick="location.href='unread.php';" value="Back" name="back" class="alt" /></td>
-                </tr>
-
-
-            </table>
-        <?php endif; ?>
-    </form>
+        </table>
+    <?php endif; ?>
+</form>
 
 </body>
 </html>

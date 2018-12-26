@@ -73,12 +73,13 @@ session_start();
 								<th>Category</th>
 								<th>Name</th>
 								<th>Mobile Number</th>
-								<th>Reason for Pending</th>
+								<th>Overseer</th>
+								<th>Contractor</th>
 							</tr>
 						</thead>
 
 						<tbody>
-							<?php $m="    SELECT * FROM `pending` p LEFT JOIN complaint c ON c.C_Id = p.C_id WHERE p.AE_Id =  " . $_SESSION['id'] ;
+							<?php $m="    SELECT * FROM `completed` p LEFT JOIN complaint c ON c.C_Id = p.C_id WHERE p.AE_Id =  " . $_SESSION['id'] ;
 							$result=mysqli_query($conn,$m);
 							?>
 
@@ -94,7 +95,8 @@ session_start();
 									<td> <?php echo $row['type']; ?></td>
 									<td> <?php echo $row['name']; ?></td>
 									<td><?php echo $row['Mobile_Number']; ?> </td>
-									<td><?php echo $row['Reason']; ?> </td>
+									<td><?php echo $row['Overseer']; ?> </td>
+									<td><?php echo $row['Contractor']; ?> </td>
 									<!-- <td> 
 										<a href="unreadview.php?id=<?php echo $row['C_Id']; ?>">view</a> 
 									</td> -->
@@ -107,7 +109,11 @@ session_start();
 
 						</tbody>
 					</table>
-
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<input readonly type="button" onclick="location.href='LOGINVIEW.PHP';" value="Back" name="back" class="alt" /></td>
 
 
 

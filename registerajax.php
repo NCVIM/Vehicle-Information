@@ -46,8 +46,8 @@ if(isset($_POST['Mobile_No'])) {
 
 
  $othr = "";
- if(isset( $_POST["others"]))
-  $othr = $_POST["others"];
+ if(isset( $_POST["Others"]))
+  $othr = $_POST["Others"];
 
 $sql="insert into complaint(district,taluk,panchayath,AE_Id,type,Others,Description,Landmark,name,Mobile_Number)
 values('".$_POST["District"]."','".$_POST["taluk"]."','".$_POST["Panchayat"]."','$m','".$_POST["Category"]."',
